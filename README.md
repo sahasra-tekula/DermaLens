@@ -31,7 +31,7 @@ common pigmented skin lesions.” *Scientific Data* 5, 180161 (2018).
 
 ![Analyse tab: prediction, class probabilities and Grad-CAM overlay](readme_images/Screenshot 2026-11-15 194843.png)
 
-![Error handling for an invalid upload](readme_images/Screenshot 2026-11-15 194843.png)
+![Error handling for an invalid upload](readme_images/Screenshot 2026-11-15 194842.png)
 
 ## Local API
 
