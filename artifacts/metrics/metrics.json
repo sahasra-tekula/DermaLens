@@ -1,0 +1,304 @@
+{
+  "selected_stage": "stage_b",
+  "selected_checkpoint": "D:\\Datasets\\DermaLens\\checkpoints\\stage_b\\best.pt",
+  "melanoma_probability_threshold": 0.6005103588104248,
+  "test_evaluation_count": 1,
+  "test_image_count": 1431,
+  "test_class_counts": {
+    "akiec": 47,
+    "bcc": 73,
+    "bkl": 157,
+    "df": 17,
+    "mel": 159,
+    "nv": 957,
+    "vasc": 21
+  },
+  "accuracy": 0.6813417190775681,
+  "macro_precision": 0.4787962011813805,
+  "macro_recall": 0.6590088572767029,
+  "macro_f1": 0.5357564583204374,
+  "macro_f1_bootstrap_95_ci": [
+    0.4912987243588317,
+    0.5756394786290895
+  ],
+  "per_class_ovr_roc_auc": {
+    "akiec": 0.9280838765219531,
+    "bcc": 0.9618496176891884,
+    "bkl": 0.8625523702866742,
+    "df": 0.9555703469506615,
+    "mel": 0.7810658201811637,
+    "nv": 0.920858519723644,
+    "vasc": 0.97193515704154
+  },
+  "macro_ovr_roc_auc": 0.9117022440564034,
+  "melanoma_argmax_precision": 0.31620553359683795,
+  "melanoma_argmax_recall": 0.5031446540880503,
+  "melanoma_threshold_precision": 0.4251968503937008,
+  "melanoma_threshold_recall": 0.33962264150943394,
+  "melanoma_threshold_f1": 0.3776223776223776,
+  "per_class_metrics_argmax": {
+    "akiec": {
+      "precision": 0.35064935064935066,
+      "recall": 0.574468085106383,
+      "f1-score": 0.43548387096774194,
+      "support": 47.0
+    },
+    "bcc": {
+      "precision": 0.4233576642335766,
+      "recall": 0.7945205479452054,
+      "f1-score": 0.5523809523809524,
+      "support": 73.0
+    },
+    "bkl": {
+      "precision": 0.5302013422818792,
+      "recall": 0.5031847133757962,
+      "f1-score": 0.5163398692810458,
+      "support": 157.0
+    },
+    "df": {
+      "precision": 0.3235294117647059,
+      "recall": 0.6470588235294118,
+      "f1-score": 0.43137254901960786,
+      "support": 17.0
+    },
+    "mel": {
+      "precision": 0.31620553359683795,
+      "recall": 0.5031446540880503,
+      "f1-score": 0.3883495145631068,
+      "support": 159.0
+    },
+    "nv": {
+      "precision": 0.9460916442048517,
+      "recall": 0.7335423197492164,
+      "f1-score": 0.8263684520306063,
+      "support": 957.0
+    },
+    "vasc": {
+      "precision": 0.46153846153846156,
+      "recall": 0.8571428571428571,
+      "f1-score": 0.6,
+      "support": 21.0
+    },
+    "accuracy": 0.6813417190775681,
+    "macro avg": {
+      "precision": 0.4787962011813805,
+      "recall": 0.6590088572767029,
+      "f1-score": 0.5357564583204374,
+      "support": 1431.0
+    },
+    "weighted avg": {
+      "precision": 0.7697455840294015,
+      "recall": 0.6813417190775681,
+      "f1-score": 0.7088556433812545,
+      "support": 1431.0
+    }
+  },
+  "always_predict_nv_baseline": {
+    "accuracy": 0.6687631027253669,
+    "macro_precision": 0.09553758610362384,
+    "macro_recall": 0.14285714285714285,
+    "macro_f1": 0.11450107681263459,
+    "per_class_metrics": {
+      "akiec": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 47.0
+      },
+      "bcc": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 73.0
+      },
+      "bkl": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 157.0
+      },
+      "df": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 17.0
+      },
+      "mel": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 159.0
+      },
+      "nv": {
+        "precision": 0.6687631027253669,
+        "recall": 1.0,
+        "f1-score": 0.8015075376884422,
+        "support": 957.0
+      },
+      "vasc": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1-score": 0.0,
+        "support": 21.0
+      },
+      "accuracy": 0.6687631027253669,
+      "macro avg": {
+        "precision": 0.09553758610362384,
+        "recall": 0.14285714285714285,
+        "f1-score": 0.11450107681263459,
+        "support": 1431.0
+      },
+      "weighted avg": {
+        "precision": 0.44724408756685957,
+        "recall": 0.6687631027253669,
+        "f1-score": 0.5360186677622916,
+        "support": 1431.0
+      }
+    }
+  },
+  "split_note": "test was evaluated once after model and melanoma threshold selection on validation",
+  "missed_melanoma_count_at_selected_threshold": 105,
+  "missed_melanoma_case_ids": [
+    "ISIC_0024571",
+    "ISIC_0024701",
+    "ISIC_0024739",
+    "ISIC_0024823",
+    "ISIC_0024886",
+    "ISIC_0024900",
+    "ISIC_0024911",
+    "ISIC_0025188",
+    "ISIC_0025238",
+    "ISIC_0025265",
+    "ISIC_0025313",
+    "ISIC_0025489",
+    "ISIC_0025546",
+    "ISIC_0025592",
+    "ISIC_0025651",
+    "ISIC_0025674",
+    "ISIC_0025814",
+    "ISIC_0026115",
+    "ISIC_0026281",
+    "ISIC_0026475",
+    "ISIC_0026506",
+    "ISIC_0026622",
+    "ISIC_0026774",
+    "ISIC_0026811",
+    "ISIC_0026853",
+    "ISIC_0026954",
+    "ISIC_0026976",
+    "ISIC_0027204",
+    "ISIC_0027282",
+    "ISIC_0027387",
+    "ISIC_0027552",
+    "ISIC_0027793",
+    "ISIC_0027964",
+    "ISIC_0028156",
+    "ISIC_0028442",
+    "ISIC_0028537",
+    "ISIC_0028548",
+    "ISIC_0028777",
+    "ISIC_0028860",
+    "ISIC_0028878",
+    "ISIC_0028968",
+    "ISIC_0029238",
+    "ISIC_0029353",
+    "ISIC_0029397",
+    "ISIC_0029547",
+    "ISIC_0029698",
+    "ISIC_0029885",
+    "ISIC_0029893",
+    "ISIC_0029914",
+    "ISIC_0029937",
+    "ISIC_0030366",
+    "ISIC_0030382",
+    "ISIC_0030390",
+    "ISIC_0030417",
+    "ISIC_0030552",
+    "ISIC_0030623",
+    "ISIC_0030759",
+    "ISIC_0030901",
+    "ISIC_0030910",
+    "ISIC_0030932",
+    "ISIC_0030970",
+    "ISIC_0030995",
+    "ISIC_0031146",
+    "ISIC_0031310",
+    "ISIC_0031339",
+    "ISIC_0031369",
+    "ISIC_0031529",
+    "ISIC_0031670",
+    "ISIC_0032072",
+    "ISIC_0032182",
+    "ISIC_0032372",
+    "ISIC_0032476",
+    "ISIC_0032526",
+    "ISIC_0032533",
+    "ISIC_0032552",
+    "ISIC_0032604",
+    "ISIC_0032638",
+    "ISIC_0032645",
+    "ISIC_0032685",
+    "ISIC_0032807",
+    "ISIC_0032869",
+    "ISIC_0032903",
+    "ISIC_0032960",
+    "ISIC_0032988",
+    "ISIC_0033004",
+    "ISIC_0033042",
+    "ISIC_0033166",
+    "ISIC_0033175",
+    "ISIC_0033302",
+    "ISIC_0033320",
+    "ISIC_0033323",
+    "ISIC_0033344",
+    "ISIC_0033387",
+    "ISIC_0033428",
+    "ISIC_0033485",
+    "ISIC_0033524",
+    "ISIC_0033638",
+    "ISIC_0033708",
+    "ISIC_0033779",
+    "ISIC_0033805",
+    "ISIC_0033881",
+    "ISIC_0033886",
+    "ISIC_0033911",
+    "ISIC_0033980",
+    "ISIC_0033986"
+  ],
+  "test_montage_paths_external": [
+    "D:\\Datasets\\DermaLens\\cache_224\\test_error_review\\missed_melanomas_page_1.png",
+    "D:\\Datasets\\DermaLens\\cache_224\\test_error_review\\missed_melanomas_page_2.png",
+    "D:\\Datasets\\DermaLens\\cache_224\\test_error_review\\missed_melanomas_page_3.png",
+    "D:\\Datasets\\DermaLens\\cache_224\\test_error_review\\missed_melanomas_page_4.png",
+    "D:\\Datasets\\DermaLens\\cache_224\\test_error_review\\missed_melanomas_page_5.png"
+  ],
+  "validation_stage_comparison": [
+    {
+      "stage": "stage_a",
+      "checkpoint_path": "D:\\Datasets\\DermaLens\\checkpoints\\stage_a\\best.pt",
+      "best_epoch": 17,
+      "val_macro_f1": 0.4328581480172276,
+      "val_mel_recall": 0.46540880503144655
+    },
+    {
+      "stage": "stage_b",
+      "checkpoint_path": "D:\\Datasets\\DermaLens\\checkpoints\\stage_b\\best.pt",
+      "best_epoch": 5,
+      "val_macro_f1": 0.49398133582719367,
+      "val_mel_recall": 0.5786163522012578
+    }
+  ],
+  "validation_melanoma_threshold_metrics": {
+    "threshold": 0.6005103588104248,
+    "precision": 0.52,
+    "recall": 0.4088050314465409,
+    "f1": 0.45774647887323944,
+    "argmax_precision": 0.36220472440944884,
+    "argmax_recall": 0.5786163522012578
+  },
+  "validation_threshold_selection_rule": "maximize binary melanoma F1 on validation precision-recall curve",
+  "macro_f1_bootstrap_resamples": 2000,
+  "macro_f1_bootstrap_seed": 42,
+  "macro_f1_bootstrap_method": "unstratified image resampling with replacement; fixed seven-class label set",
+  "melanoma_argmax_f1": 0.3883495145631068
+}

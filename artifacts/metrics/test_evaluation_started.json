@@ -1,0 +1,6 @@
+{
+  "started_unix": 1794741072.4434688,
+  "selected_stage": "stage_b",
+  "selected_checkpoint": "D:\\Datasets\\DermaLens\\checkpoints\\stage_b\\best.pt",
+  "validation_threshold": 0.6005103588104248
+}

@@ -1,0 +1,31 @@
+{
+  "selected_stage": "stage_b",
+  "selected_checkpoint": "D:\\Datasets\\DermaLens\\checkpoints\\stage_b\\best.pt",
+  "selection_rule": "highest validation macro-F1; validation melanoma recall breaks exact ties",
+  "stage_comparison": [
+    {
+      "stage": "stage_a",
+      "checkpoint_path": "D:\\Datasets\\DermaLens\\checkpoints\\stage_a\\best.pt",
+      "best_epoch": 17,
+      "val_macro_f1": 0.4328581480172276,
+      "val_mel_recall": 0.46540880503144655
+    },
+    {
+      "stage": "stage_b",
+      "checkpoint_path": "D:\\Datasets\\DermaLens\\checkpoints\\stage_b\\best.pt",
+      "best_epoch": 5,
+      "val_macro_f1": 0.49398133582719367,
+      "val_mel_recall": 0.5786163522012578
+    }
+  ],
+  "selected_validation_threshold_metrics": {
+    "threshold": 0.6005103588104248,
+    "precision": 0.52,
+    "recall": 0.4088050314465409,
+    "f1": 0.45774647887323944,
+    "argmax_precision": 0.36220472440944884,
+    "argmax_recall": 0.5786163522012578
+  },
+  "threshold_rule": "maximize binary melanoma F1 on validation precision-recall curve",
+  "test_evaluated": true
+}

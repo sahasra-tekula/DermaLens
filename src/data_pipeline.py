@@ -48,13 +48,17 @@ def load_config(config_path: str | Path | None = None) -> dict[str, Any]:
             "dataset_config.json and set dataset_root and cache_root."
         )
     config = json.loads(path.read_text(encoding="utf-8"))
-    required = {"dataset_root", "cache_root", "metadata_file", "image_directories", "image_size", "seed"}
+    required = {
+        "dataset_root", "cache_root", "checkpoint_root", "metadata_file",
+        "image_directories", "image_size", "seed",
+    }
     missing = required - config.keys()
     if missing:
         raise ValueError(f"Configuration is missing keys: {sorted(missing)}")
     config["config_path"] = path
     config["dataset_root"] = Path(config["dataset_root"]).expanduser().resolve()
     config["cache_root"] = Path(config["cache_root"]).expanduser().resolve()
+    config["checkpoint_root"] = Path(config["checkpoint_root"]).expanduser().resolve()
     config["metadata_path"] = config["dataset_root"] / config["metadata_file"]
     config["image_dirs"] = [config["dataset_root"] / item for item in config["image_directories"]]
     return config

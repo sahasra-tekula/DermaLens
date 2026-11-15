@@ -1,0 +1,3 @@
+stage,checkpoint_path,best_epoch,val_macro_f1,val_mel_recall
+stage_a,D:\Datasets\DermaLens\checkpoints\stage_a\best.pt,17,0.4328581480172276,0.46540880503144655
+stage_b,D:\Datasets\DermaLens\checkpoints\stage_b\best.pt,5,0.49398133582719367,0.5786163522012578

@@ -1,6 +1,7 @@
 {
   "dataset_root": "D:/path/to/HAM10000/data",
   "cache_root": "D:/path/to/dermalens/cache_224",
+  "checkpoint_root": "D:/path/to/dermalens/checkpoints",
   "metadata_file": "HAM10000_metadata.csv",
   "image_directories": [
     "HAM10000_images_part_1",
