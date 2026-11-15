@@ -109,3 +109,24 @@ small, or diffuse; others had mixed pigmentation, hairs, or vignetting. Some
 dark, irregular-looking examples were also missed. There was no single
 consistent visual pattern that explained the errors. This is an image-level
 error review, not a medical interpretation.
+
+## Grad-CAM visualization
+
+Grad-CAM uses the output of the final block in `layer4` from the selected
+Stage B `best.pt`. Its heatmap is resized to the cached 224×224 input and
+overlaid on the image. The example panels explain the class chosen by the
+frozen melanoma threshold decision. They are drawn from the validation split;
+the test split is not used again for visualization. All full-resolution panels
+and the contact sheet are stored outside the repository at
+`D:\Datasets\DermaLens\gradcam\`.
+
+Grad-CAM shows model attention, not medical correctness. The visuals are
+educational illustrations and do not validate a diagnosis. The two compact
+README examples are validation images from HAM10000 and are attributed in the
+README.
+
+Generate the panels and the two compact README examples with:
+
+```powershell
+python -m src.gradcam --include-readme-examples
+```
