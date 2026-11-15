@@ -27,7 +27,7 @@ common pigmented skin lesions.” *Scientific Data* 5, 180161 (2018).
 [Data paper](https://doi.org/10.1038/sdata.2018.161) ·
 [Harvard Dataverse dataset](https://doi.org/10.7910/DVN/DBW86T).
 
-##Application Images
+## Application Images
 
 ![Analyse tab: prediction, class probabilities and Grad-CAM overlay](readme_images/Screenshot 2026-11-15 194843.png)
 
