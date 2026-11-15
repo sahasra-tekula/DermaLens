@@ -1,6 +1,7 @@
 import base64
 import io
 import json
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -151,6 +152,26 @@ def test_cors_allows_local_react_dev_server(healthy_client):
     client, _ = healthy_client
     response = client.get("/api/health", headers={"Origin": "http://localhost:5173"})
     assert response.headers["access-control-allow-origin"] == "http://localhost:5173"
+
+
+def test_metrics_endpoint_returns_committed_metrics_json(healthy_client):
+    client, _ = healthy_client
+    response = client.get("/api/metrics")
+    expected = json.loads(
+        (Path(__file__).resolve().parents[1] / "artifacts" / "metrics" / "metrics.json")
+        .read_text(encoding="utf-8")
+    )
+
+    assert response.status_code == 200
+    assert response.json() == expected
+
+
+def test_confusion_matrix_endpoint_serves_metrics_image(healthy_client):
+    client, _ = healthy_client
+    response = client.get("/api/metrics/confusion-matrix")
+    assert response.status_code == 200
+    assert response.headers["content-type"].startswith("image/png")
+    assert response.content.startswith(b"\x89PNG\r\n\x1a\n")
 
 
 def test_missing_checkpoint_returns_clear_unavailable_response(tmp_path):

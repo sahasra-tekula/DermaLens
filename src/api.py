@@ -19,12 +19,12 @@ import numpy as np
 import torch
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.exceptions import RequestValidationError
-from fastapi.responses import JSONResponse
+from fastapi.responses import FileResponse, JSONResponse
 from PIL import Image, UnidentifiedImageError
 from torch import nn
 from torchvision.models import resnet18
 
-from src.data_pipeline import CLASSES, load_config, preprocess_image
+from src.data_pipeline import CLASSES, PROJECT_ROOT, load_config, preprocess_image
 from src.gradcam import GradCAM
 
 
@@ -51,6 +51,7 @@ DEFAULT_CORS_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
 ]
+METRICS_DIR = PROJECT_ROOT / "artifacts" / "metrics"
 _JET = matplotlib.colormaps["jet"]
 
 
@@ -275,6 +276,20 @@ def create_app(
         if not loaded:
             result["model_load_error"] = application.state.load_error or "Model is not loaded."
         return result
+
+    @application.get("/api/metrics")
+    def metrics() -> FileResponse:
+        metrics_path = METRICS_DIR / "metrics.json"
+        if not metrics_path.is_file():
+            raise HTTPException(status_code=404, detail="Metrics report is unavailable.")
+        return FileResponse(metrics_path, media_type="application/json")
+
+    @application.get("/api/metrics/confusion-matrix")
+    def confusion_matrix_image() -> FileResponse:
+        image_path = METRICS_DIR / "confusion_matrix.png"
+        if not image_path.is_file():
+            raise HTTPException(status_code=404, detail="Confusion matrix image is unavailable.")
+        return FileResponse(image_path, media_type="image/png")
 
     @application.post("/api/predict")
     def predict(file: UploadFile = File(...)) -> dict[str, Any]:

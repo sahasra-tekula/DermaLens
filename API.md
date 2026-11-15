@@ -37,6 +37,11 @@ the disclaimer. CORS is enabled by default for React development servers on
 `localhost` and `127.0.0.1` ports 3000 and 5173. Override the list with the
 comma-separated `DERMALENS_CORS_ORIGINS` environment variable.
 
+`GET /api/metrics` streams the committed `artifacts/metrics/metrics.json`
+contents. `GET /api/metrics/confusion-matrix` serves its confusion-matrix PNG.
+The frontend displays the required test summary and does not display or use the
+melanoma probability threshold field present in the full metrics document.
+
 Run API and preprocessing tests with:
 
 ```powershell
