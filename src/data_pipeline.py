@@ -261,6 +261,18 @@ def _transforms(augment: bool) -> transforms.Compose:
     return transforms.Compose(ops)
 
 
+def preprocess_image(
+    image: Image.Image,
+    image_size: int = 224,
+    transform: transforms.Compose | None = None,
+) -> torch.Tensor:
+    """Apply the deterministic evaluation resize and normalization to one PIL image."""
+    rgb = image.convert("RGB")
+    if rgb.size != (image_size, image_size):
+        rgb = rgb.resize((image_size, image_size), Image.Resampling.BILINEAR)
+    return (transform or _transforms(augment=False))(rgb)
+
+
 class DermImageDataset(Dataset):
     """Load resized images from disk; only pixels are model input and dx is the target."""
 
@@ -270,6 +282,7 @@ class DermImageDataset(Dataset):
         if missing:
             raise ValueError(f"Split CSV is missing columns: {sorted(missing)}")
         self.cache_root = Path(cache_root)
+        self.augment = augment
         self.transform = _transforms(augment)
         self.labels = self.frame["dx"].map(CLASS_TO_IDX)
         if self.labels.isna().any():
@@ -285,7 +298,11 @@ class DermImageDataset(Dataset):
             image = image.convert("RGB")
             if image.size != (224, 224):
                 raise ValueError(f"Cached image has unexpected size {image.size}: {image_path}")
-            pixels = self.transform(image)
+            pixels = (
+                self.transform(image)
+                if self.augment
+                else preprocess_image(image, transform=self.transform)
+            )
         return pixels, torch.tensor(int(self.labels.iloc[index]), dtype=torch.long)
 
 

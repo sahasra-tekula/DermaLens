@@ -26,3 +26,16 @@ HAM10000 dataset, a large collection of multi-source dermatoscopic images of
 common pigmented skin lesions.” *Scientific Data* 5, 180161 (2018).
 [Data paper](https://doi.org/10.1038/sdata.2018.161) ·
 [Harvard Dataverse dataset](https://doi.org/10.7910/DVN/DBW86T).
+
+## Local API
+
+Configure `stage_b_checkpoint` in the ignored `dataset_config.json` (or leave
+it unset to use `checkpoint_root/stage_b/best.pt`), then run:
+
+```powershell
+uvicorn src.api:app --host 127.0.0.1 --port 8000
+```
+
+The FastAPI routes, upload limits, response fields, CORS origins, and tests are
+documented in [API.md](API.md). The API uses argmax predictions and returns an
+educational disclaimer with every response.
