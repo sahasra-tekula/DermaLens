@@ -1,0 +1,15 @@
+# Machine-specific dataset locations
+dataset_config.json
+
+# Dataset copies and generated training artifacts
+/data/
+/models/
+/checkpoints/
+/outputs/
+
+# Python environments and generated files
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
